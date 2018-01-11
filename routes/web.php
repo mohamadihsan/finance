@@ -12,5 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect('/users');
 });
+
+Route::get('about', function () {
+    return 'About Page';
+});
+
+Route::get('users', function () {
+    $users = [
+        ['id'=>'1', 'username'=>'ihsan', 'password'=>'12345'],
+        ['id'=>'2', 'username'=>'admin', 'password'=>'admin'],
+        ['id'=>'3', 'username'=>'client', 'password'=>'client']
+    ];
+
+    echo '<ul>';
+    foreach ($users as $user) {
+        echo '<li> <a href="' . route('detail.user', $user['id']) . '">' . $user['username'] . '</a></li>';
+    }
+    echo '</ul>';
+});
+
+Route::get('users/{id}', ['as' => 'detail.user', function ($id) {
+    echo 'Data dengan id ' . $id . ' telah diterima';
+}]);
