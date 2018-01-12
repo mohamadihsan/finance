@@ -24,7 +24,11 @@
                     <td>{{ $user['id'] }}</td>
                     <td>{{ $user['username'] }}</td>
                     <td>{{ $user['password'] }}</td>
-                    <td></td>
+                    <td>
+                        <a href="{{ route('user.show', $user['id']) }}">Detail</a>
+                        <a href="{{ route('user.edit', $user['id']) }}">Edit</a>
+                        <a href="{{ route('user.destroy', $user['id']) }}">Delete</a>
+                    </td>
                 </tr>
                 @endforeach
                 @else

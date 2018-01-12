@@ -90,6 +90,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return 'Data dengan ID ' . $id . ' telah berhasil di hapus';
     }
 }
