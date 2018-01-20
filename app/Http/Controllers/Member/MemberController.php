@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = [
-            ["id" => "1", "username" => "ihsan", "password" => "admin"],
-            ["id" => "2", "username" => "admin", "password" => "admin"],
-            ["id" => "3", "username" => "client", "password" => "admin"]
+        $member = [
+            ['nama' => 'Mohamad Ihsan' ]
         ];
-
-        return view('user/index', compact('users'));
+        return view('member/index', compact('member'));
     }
 
     /**
@@ -31,7 +28,6 @@ class UserController extends Controller
     public function create()
     {
         //
-        return view('user/create');
     }
 
     /**
@@ -43,7 +39,6 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-        return dd($request->all());
     }
 
     /**
@@ -54,7 +49,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return "ID " . $id . " telah dipanggil dengan method show";
+        //
     }
 
     /**
@@ -65,7 +60,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return "ID " . $id . " telah dipanggil dengan method edit";
+        //
     }
 
     /**
@@ -88,6 +83,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        return 'Data dengan ID ' . $id . ' telah berhasil di hapus';
+        //
     }
 }
